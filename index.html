@@ -36,7 +36,7 @@
     .hero{max-width:950px;min-height:420px;margin:0 auto;padding:36px 38px 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.75fr);align-items:center;gap:34px;text-align:left;border:1px solid #1a6840;border-radius:5px;background:linear-gradient(145deg,#07120b,#040806 68%);box-shadow:0 0 0 1px #07180e,0 0 42px #00ff7712;position:relative}
     .orbit{width:420px;height:420px;top:50%;left:72%;transform:translate(-50%,-50%);border-color:#28db7c15}
     .orbit:before,.orbit:after{border-color:#28db7c15}
-    .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:min(100%,300px);height:400px;margin:0;border-radius:3px;border:1px solid #1c9e59;background:#050c08;box-shadow:0 0 25px #00ff7718;isolation:isolate}
+    .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:min(100%,255px);height:340px;margin:0;border-radius:3px;border:1px solid #1c9e59;background:#050c08;box-shadow:0 0 25px #00ff7718;isolation:isolate}
     .portrait:before,.portrait:after{content:none}
     .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.04) saturate(.9)}
     .name{grid-column:1;grid-row:1;margin:12px 0 0;color:#8dffb7;font-family:var(--mono);font-size:clamp(68px,10vw,116px);line-height:.9;font-weight:800;letter-spacing:-.09em;text-shadow:0 0 22px #00ff7733}
@@ -60,7 +60,7 @@
       .status{padding:0 11px;font-size:8px;letter-spacing:.07em}.status-left,.metrics{gap:7px}
       .wrap{padding:28px 15px 28px}
       .hero{min-height:0;padding:24px 17px;grid-template-columns:1fr;gap:12px;text-align:center}
-      .portrait{grid-column:1;grid-row:1;width:min(72vw,290px);height:auto;aspect-ratio:3/4;margin:0 auto 7px}
+      .portrait{grid-column:1;grid-row:1;width:min(60vw,230px);height:auto;aspect-ratio:3/4;margin:0 auto 7px}
       .name{grid-column:1;grid-row:2;font-size:clamp(64px,20vw,96px);margin-top:4px}
       .tagline{grid-column:1;grid-row:3;margin-top:6px;font-size:10px;letter-spacing:.09em}
       .socials{grid-column:1;grid-row:4;justify-content:center;margin:16px 0 3px}
@@ -71,46 +71,6 @@
       .footer{font-size:8px;letter-spacing:.08em}
     }
     @media(prefers-reduced-motion:reduce){.tagline:after{animation:none}}
-    /* Compact proportions for phones and short displays */
-    .wrap{max-width:1000px;padding:32px 24px 30px}
-    .hero{max-width:850px;min-height:0;padding:28px 28px 24px;gap:24px}
-    .portrait{width:min(100%,240px);height:320px}
-    .name{font-size:clamp(58px,8vw,92px)}
-    .orbit{width:350px;height:350px}
-    .links{max-width:850px;margin:26px auto 30px;gap:10px}
-    .link-card{min-height:78px;padding:12px 14px}
-    .footer{max-width:850px}
-    @media(max-width:650px){
-      .status{height:38px;padding:0 10px;font-size:7px;letter-spacing:.04em}.status-left,.metrics{gap:5px}
-      .wrap{padding:16px 12px 20px}
-      .hero{width:100%;min-height:0;padding:18px 12px 16px;grid-template-columns:minmax(0,1fr);gap:8px;text-align:center}
-      .portrait{grid-column:1;grid-row:1;width:min(58vw,210px);height:auto;aspect-ratio:3/4;margin:0 auto 3px}
-      .name{grid-column:1;grid-row:2;margin:0;font-size:clamp(54px,16vw,72px);line-height:.95;letter-spacing:-.08em}
-      .verified{width:13px;height:13px;margin-left:5px;font-size:8px}
-      .tagline{grid-column:1;grid-row:3;margin:2px 0 0;font-size:9px;letter-spacing:.07em}
-      .socials{grid-column:1;grid-row:4;justify-content:center;gap:8px;margin:8px 0 0}
-      .social{width:38px;height:38px}
-      .orbit{width:270px;height:270px;top:150px;left:50%}
-      .links{width:100%;grid-template-columns:minmax(0,1fr);margin:18px auto 20px;gap:8px}
-      .links:before{grid-column:1;margin-bottom:1px;font-size:9px}
-      .link-card{min-height:68px;padding:9px 10px;gap:10px}
-      .link-icon{width:32px;height:32px}
-      .link-title{font-size:10px;letter-spacing:.04em}
-      .link-note{font-size:9px}
-      .footer{font-size:8px;letter-spacing:.06em}
-    }
-    @media(max-width:380px){
-      .status{font-size:6px;letter-spacing:.02em}.status-left,.metrics{gap:4px}
-      .portrait{width:min(54vw,180px)}.name{font-size:54px}
-      .link-card{padding:8px;gap:8px}.link-title{font-size:9px}
-    }
-    @media(max-height:700px) and (max-width:650px){
-      .wrap{padding-top:10px;padding-bottom:12px}
-      .hero{padding:12px 10px;gap:6px}
-      .portrait{width:min(42vw,155px)}
-      .tagline{margin-top:0}.socials{margin-top:5px}
-      .links{margin:12px auto;gap:6px}.link-card{min-height:58px}
-    }
   </style>
 </head>
 <body>

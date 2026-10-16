@@ -20,4 +20,18 @@ The repository includes a GitHub Actions workflow that publishes the root folder
 2. Under **Build and deployment**, choose **GitHub Actions** as the source.
 3. Push a change to `main`, or manually run **Deploy to GitHub Pages** from the **Actions** tab.
 
-For this repository, the expected site address is `https://procvv.github.io/link-site/` after Pages is enabled and the first deployment succeeds.
+GitHub Pages is configured to use `bsko.shop`. Add these DNS records at your domain provider:
+
+| Type | Host/name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` |
+| AAAA | `@` | `2606:50c0:8001::153` |
+| AAAA | `@` | `2606:50c0:8002::153` |
+| AAAA | `@` | `2606:50c0:8003::153` |
+| CNAME | `www` | `procvv.github.io` |
+
+After DNS updates propagate, GitHub will check the domain and issue an HTTPS certificate. DNS changes can take up to 24 hours to propagate. The `www` record is recommended and redirects to the apex domain.

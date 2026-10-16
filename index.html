@@ -23,6 +23,53 @@
     @keyframes pulse{50%{opacity:.45;box-shadow:0 0 3px #ff5473}}
     @media(max-width:600px){.status{padding:0 10px;font-size:8px;letter-spacing:.06em}.status-left,.metrics{gap:7px}.metric b{margin-left:2px}.wrap{padding:54px 18px 32px}.portrait{width:126px;height:126px}.orbit{width:340px;height:340px;top:-82px}.socials{margin-bottom:36px}.link-card{padding:0 14px}.footer{font-size:9px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+    /* BSKO / signal-noir theme */
+    :root{--bg:#050605;--panel:#10120d;--line:#33382a;--blue:#d6ff00;--ice:#f4f4ed;--muted:#9a9d8e;--acid:#d6ff00;--violet:#a879ff}
+    body{background:radial-gradient(ellipse at 77% 30%,#252013 0,transparent 29rem),radial-gradient(ellipse at 14% 70%,#171126 0,transparent 28rem),#050605;color:var(--ice)}
+    body:before{opacity:.22;background-image:linear-gradient(#ceff0012 1px,transparent 1px),linear-gradient(90deg,#ceff0012 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
+    .noise{opacity:.16}
+    .status{height:42px;border-bottom:1px solid #313329;background:#070806;color:#aeb09f;letter-spacing:.15em}
+    .live{color:var(--acid)}.dot{background:var(--acid);box-shadow:0 0 12px #d6ff00;animation:pulse 1.7s infinite}
+    .metric b{color:#fff}
+    .wrap{max-width:1120px;padding:54px 28px 40px}
+    .hero{max-width:930px;min-height:475px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:center;gap:32px;text-align:left}
+    .orbit{width:470px;height:470px;top:50%;left:73%;transform:translate(-50%,-50%);border-color:#d6ff001f}
+    .orbit:before,.orbit:after{border-color:#a879ff20}
+    .portrait{grid-column:2;grid-row:1 / span 4;justify-self:center;width:min(100%,340px);height:390px;margin:0;border-radius:3px;border:1px solid #d6ff00;background:linear-gradient(155deg,#1b1d12,#090a08 66%);box-shadow:14px 14px 0 #d6ff00;isolation:isolate}
+    .portrait:before,.portrait:after{position:absolute;z-index:1;left:14px;padding:8px 10px;border:1px solid #d6ff00;background:#080907e8;color:#d6ff00;font:700 9px var(--mono);letter-spacing:.16em}
+    .portrait:before{content:"BSKO / 01";top:14px}
+    .portrait:after{content:"INDEPENDENT CREATOR";bottom:14px;color:#f4f4ed;border-color:#f4f4ed66}
+    .portrait svg{opacity:.9;filter:saturate(.7) contrast(1.12)}
+    .eyebrow{grid-column:1;grid-row:1;display:block;color:var(--acid);font:700 10px var(--mono);letter-spacing:.27em}
+    .name{grid-column:1;grid-row:2;margin:12px 0 0;font-size:clamp(82px,13vw,148px);line-height:.78;font-weight:950;letter-spacing:-.095em;text-shadow:0 0 38px #d6ff0024}
+    .verified{width:20px;height:20px;margin-left:8px;background:var(--violet);color:#080610;font-size:12px;letter-spacing:0;vertical-align:top}
+    .tagline{grid-column:1;grid-row:3;margin:21px 0 0;color:#c5c8b8;font-size:11px;letter-spacing:.25em}
+    .socials{grid-column:1;grid-row:4;justify-content:flex-start;gap:10px;margin:27px 0 0}
+    .social{width:48px;height:48px;border:1px solid #484b3a;border-radius:3px;color:var(--acid);background:#10120d;box-shadow:4px 4px 0 #d6ff0020}
+    .social:hover,.social:focus-visible{border-color:var(--acid);color:#080907;background:var(--acid);transform:translate(-2px,-2px);box-shadow:6px 6px 0 #a879ff}
+    .links{max-width:930px;margin:38px auto 42px;grid-template-columns:1fr 1fr;gap:14px}
+    .links:before{content:"01 / CONNECT DIRECT";grid-column:1/-1;margin:0 0 2px;color:#b4b7a6;font:700 10px var(--mono);letter-spacing:.22em}
+    .link-card{min-height:102px;padding:16px 18px;border:1px solid #36392e;border-radius:3px;background:linear-gradient(125deg,#14160f,#0a0b09 75%);color:var(--ice);transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
+    .link-card:hover,.link-card:focus-visible{transform:translate(-3px,-3px);border-color:var(--acid);background:#171a0d;box-shadow:6px 6px 0 #d6ff00}
+    .link-icon{width:42px;height:42px;border-radius:2px;background:var(--acid);color:#090a07}
+    .link-title{font-size:12px;letter-spacing:.14em}
+    .link-note{color:#a1a493;font-size:11px}
+    .arrow{color:var(--acid);font-size:22px}
+    .footer{max-width:930px;border-color:#383a30;padding-top:16px;color:#9b9e8e;font-size:9px;letter-spacing:.16em}
+    @media(max-width:650px){
+      .status{padding:0 12px;font-size:8px;letter-spacing:.08em}.status-left,.metrics{gap:8px}
+      .wrap{padding:36px 18px 30px}
+      .hero{min-height:0;padding:18px 0 8px;grid-template-columns:1fr;gap:14px;text-align:center}
+      .portrait{grid-column:1;grid-row:1;width:min(72vw,320px);height:310px;margin:0 auto 12px;box-shadow:9px 9px 0 #d6ff00}
+      .eyebrow{grid-column:1;grid-row:2}.name{grid-column:1;grid-row:3;font-size:clamp(76px,23vw,120px);margin-top:5px}
+      .tagline{grid-column:1;grid-row:4;margin-top:7px;font-size:10px;letter-spacing:.18em}
+      .socials{grid-column:1;grid-row:5;justify-content:center;margin:12px 0 8px}
+      .orbit{width:350px;height:350px;top:190px;left:50%}
+      .links{grid-template-columns:1fr;margin:34px auto 32px;gap:11px}
+      .links:before{grid-column:1}
+      .link-card{min-height:88px;padding:13px 14px}
+      .footer{font-size:8px;letter-spacing:.12em}
+    }
   </style>
 </head>
 <body>
@@ -37,6 +84,7 @@
       <div class="portrait" role="img" aria-label="Abstract blue shadow portrait">
         <svg viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="hood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#334b70"/><stop offset=".52" stop-color="#111c30"/><stop offset="1" stop-color="#050910"/></linearGradient><radialGradient id="glow"><stop stop-color="#4b91e6" stop-opacity=".55"/><stop offset="1" stop-color="#0a1325" stop-opacity="0"/></radialGradient></defs><rect width="160" height="160" fill="#0a1221"/><circle cx="120" cy="36" r="65" fill="url(#glow)"/><path d="M34 160c3-25 10-42 25-52-8-10-9-22-8-34 1-20 13-38 31-41 22-4 41 14 43 38 2 14-1 28-9 39 15 10 22 26 25 50z" fill="url(#hood)" stroke="#4d6a91" stroke-opacity=".6" stroke-width="2"/><path d="M53 79c9-7 17-10 28-10 13 0 22 4 33 12-2 13-9 23-20 28-13 6-29 1-36-11-3-5-5-12-5-19z" fill="#07101d"/><path d="M57 83c7-5 15-8 24-8s18 3 26 8" fill="none" stroke="#6894c6" stroke-opacity=".55" stroke-width="2"/><path d="M80 111v25" stroke="#4d6a91" stroke-opacity=".4" stroke-width="2"/><path d="M46 146c19-10 49-12 70 0" fill="none" stroke="#4d6a91" stroke-opacity=".35" stroke-width="2"/></svg>
       </div>
+      <p class="eyebrow">CREATOR / AFTER HOURS</p>
       <h1 class="name" id="creator-name">BSKO<span class="verified" aria-label="Verified">✓</span></h1>
       <p class="tagline">// IM ALWAYS ON GO</p>
       <nav class="socials" aria-label="Social links">
@@ -46,9 +94,9 @@
     </section>
     <section class="links" aria-label="Explore">
       <a class="link-card" href="https://t.me/"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3-4.1Z"/></svg></span><span class="link-copy"><span class="link-title">LETS GET PAID TOGETHER</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
-      <a class="link-card" href="#contact"><span class="link-icon" aria-hidden="true">✳</span><span class="link-copy"><span class="link-title">Work with BSKO</span><span class="link-note">Bookings, collabs & creative projects</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="link-card" href="https://www.instagram.com/bann.sko?dlrf=MTVobzY3M2o1cnRlbQ%3D%3D&amp;utm_source=qr"><span class="link-icon" aria-hidden="true">✳</span><span class="link-copy"><span class="link-title">Work with BSKO</span><span class="link-note">Bookings, collabs & creative projects</span></span><span class="arrow" aria-hidden="true">↗</span></a>
     </section>
-    <footer class="footer" id="contact"><span>© <span id="year"></span> BSKO · ALL SIGNALS RESERVED</span><a href="mailto:hello@novarush.example">CONTACT THE STUDIO ↗</a></footer>
+    <footer class="footer" id="contact"><span>© <span id="year"></span> BSKO · ALL SIGNALS RESERVED</span></footer>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite">Page link copied</div>
   <script>

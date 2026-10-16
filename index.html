@@ -33,23 +33,19 @@
     .live{color:var(--green)}.dot{background:var(--green);box-shadow:0 0 10px #54ff9f;animation:pulse 1.7s infinite}
     .metric b{color:#d9ffe9}
     .wrap{max-width:1080px;padding:48px 28px 38px}
-    .hero{max-width:950px;min-height:460px;margin:0 auto;padding:62px 38px 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.75fr);align-items:center;gap:34px;text-align:left;border:1px solid #1a6840;border-radius:5px;background:linear-gradient(145deg,#07120b,#040806 68%);box-shadow:0 0 0 1px #07180e,0 0 42px #00ff7712;position:relative}
-    .hero:before{content:"root@bsko.shop:~ / profile";position:absolute;inset:0 0 auto;height:34px;padding:10px 15px;border-bottom:1px solid #17482e;background:#09150d;color:#65d994;font:600 10px var(--mono);letter-spacing:.08em;text-align:left}
-    .hero:after{content:"SESSION: ACTIVE";position:absolute;right:15px;top:11px;color:#6f9e80;font:600 9px var(--mono);letter-spacing:.08em}
+    .hero{max-width:950px;min-height:420px;margin:0 auto;padding:36px 38px 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.75fr);align-items:center;gap:34px;text-align:left;border:1px solid #1a6840;border-radius:5px;background:linear-gradient(145deg,#07120b,#040806 68%);box-shadow:0 0 0 1px #07180e,0 0 42px #00ff7712;position:relative}
     .orbit{width:420px;height:420px;top:50%;left:72%;transform:translate(-50%,-50%);border-color:#28db7c15}
     .orbit:before,.orbit:after{border-color:#28db7c15}
-    .portrait{grid-column:2;grid-row:1 / span 4;justify-self:center;width:min(100%,300px);height:330px;margin:0;border-radius:3px;border:1px solid #1c9e59;background:#050c08;box-shadow:0 0 25px #00ff7718;isolation:isolate}
+    .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:min(100%,300px);height:330px;margin:0;border-radius:3px;border:1px solid #1c9e59;background:#050c08;box-shadow:0 0 25px #00ff7718;isolation:isolate}
     .portrait:before,.portrait:after{position:absolute;z-index:1;left:11px;padding:7px 9px;border:1px solid #1c9e59;background:#030705ed;color:#63ffa1;font:600 9px var(--mono);letter-spacing:.08em}
     .portrait:before{content:"[ USER: BSKO ]";top:11px}
     .portrait:after{content:"ENCRYPTED // ONLINE";bottom:11px;color:#8ab29a;border-color:#17482e}
     .portrait svg{opacity:.86;filter:grayscale(.7) sepia(.9) hue-rotate(75deg) saturate(2.4) brightness(.8)}
-    .eyebrow{grid-column:1;grid-row:1;display:block;color:#56ff9f;font:600 10px var(--mono);letter-spacing:.16em}
-    .eyebrow:before{content:"[ ";color:#a879ff}.eyebrow:after{content:" ]";color:#a879ff}
-    .name{grid-column:1;grid-row:2;margin:12px 0 0;color:#8dffb7;font-family:var(--mono);font-size:clamp(68px,10vw,116px);line-height:.9;font-weight:800;letter-spacing:-.09em;text-shadow:0 0 22px #00ff7733}
+    .name{grid-column:1;grid-row:1;margin:12px 0 0;color:#8dffb7;font-family:var(--mono);font-size:clamp(68px,10vw,116px);line-height:.9;font-weight:800;letter-spacing:-.09em;text-shadow:0 0 22px #00ff7733}
     .verified{width:16px;height:16px;margin-left:7px;background:#54ff9f;color:#031008;font-size:10px;letter-spacing:0;vertical-align:top}
-    .tagline{grid-column:1;grid-row:3;margin:18px 0 0;color:#a8c9b3;font-size:11px;letter-spacing:.14em}
+    .tagline{grid-column:1;grid-row:2;margin:18px 0 0;color:#a8c9b3;font-size:11px;letter-spacing:.14em}
     .tagline:after{content:"_";color:#54ff9f;animation:blink 1.1s steps(2,start) infinite}
-    .socials{grid-column:1;grid-row:4;justify-content:flex-start;gap:9px;margin:25px 0 0}
+    .socials{grid-column:1;grid-row:3;justify-content:flex-start;gap:9px;margin:25px 0 0}
     .social{width:44px;height:44px;border:1px solid #1a6840;border-radius:3px;color:#54ff9f;background:#06100a;box-shadow:inset 0 0 12px #00ff7708}
     .social:hover,.social:focus-visible{border-color:#54ff9f;color:#031008;background:#54ff9f;transform:translateY(-2px);box-shadow:0 0 18px #00ff7755}
     .links{max-width:950px;margin:34px auto 40px;grid-template-columns:1fr 1fr;gap:12px}
@@ -65,12 +61,11 @@
     @media(max-width:650px){
       .status{padding:0 11px;font-size:8px;letter-spacing:.07em}.status-left,.metrics{gap:7px}
       .wrap{padding:28px 15px 28px}
-      .hero{min-height:0;padding:58px 17px 24px;grid-template-columns:1fr;gap:12px;text-align:center}
-      .hero:before{font-size:9px}.hero:after{right:12px;font-size:8px}
+      .hero{min-height:0;padding:24px 17px;grid-template-columns:1fr;gap:12px;text-align:center}
       .portrait{grid-column:1;grid-row:1;width:min(72vw,290px);height:270px;margin:0 auto 7px}
-      .eyebrow{grid-column:1;grid-row:2}.name{grid-column:1;grid-row:3;font-size:clamp(64px,20vw,96px);margin-top:4px}
-      .tagline{grid-column:1;grid-row:4;margin-top:6px;font-size:10px;letter-spacing:.09em}
-      .socials{grid-column:1;grid-row:5;justify-content:center;margin:16px 0 3px}
+      .name{grid-column:1;grid-row:2;font-size:clamp(64px,20vw,96px);margin-top:4px}
+      .tagline{grid-column:1;grid-row:3;margin-top:6px;font-size:10px;letter-spacing:.09em}
+      .socials{grid-column:1;grid-row:4;justify-content:center;margin:16px 0 3px}
       .orbit{width:320px;height:320px;top:205px;left:50%}
       .links{grid-template-columns:1fr;margin:26px auto 30px;gap:10px}
       .links:before{grid-column:1}
@@ -92,7 +87,6 @@
       <div class="portrait" role="img" aria-label="Abstract blue shadow portrait">
         <svg viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="hood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#334b70"/><stop offset=".52" stop-color="#111c30"/><stop offset="1" stop-color="#050910"/></linearGradient><radialGradient id="glow"><stop stop-color="#4b91e6" stop-opacity=".55"/><stop offset="1" stop-color="#0a1325" stop-opacity="0"/></radialGradient></defs><rect width="160" height="160" fill="#0a1221"/><circle cx="120" cy="36" r="65" fill="url(#glow)"/><path d="M34 160c3-25 10-42 25-52-8-10-9-22-8-34 1-20 13-38 31-41 22-4 41 14 43 38 2 14-1 28-9 39 15 10 22 26 25 50z" fill="url(#hood)" stroke="#4d6a91" stroke-opacity=".6" stroke-width="2"/><path d="M53 79c9-7 17-10 28-10 13 0 22 4 33 12-2 13-9 23-20 28-13 6-29 1-36-11-3-5-5-12-5-19z" fill="#07101d"/><path d="M57 83c7-5 15-8 24-8s18 3 26 8" fill="none" stroke="#6894c6" stroke-opacity=".55" stroke-width="2"/><path d="M80 111v25" stroke="#4d6a91" stroke-opacity=".4" stroke-width="2"/><path d="M46 146c19-10 49-12 70 0" fill="none" stroke="#4d6a91" stroke-opacity=".35" stroke-width="2"/></svg>
       </div>
-      <p class="eyebrow">CREATOR / AFTER HOURS</p>
       <h1 class="name" id="creator-name">BSKO<span class="verified" aria-label="Verified">✓</span></h1>
       <p class="tagline">// IM ALWAYS ON GO</p>
       <nav class="socials" aria-label="Social links">

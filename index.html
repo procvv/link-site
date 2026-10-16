@@ -21,7 +21,7 @@
     .section-label{display:flex;align-items:center;gap:12px;color:#7187a9;font:600 10px var(--mono);letter-spacing:.2em;text-transform:uppercase;margin:0 0 13px}.section-label:after{content:"";height:1px;background:#213352;flex:1}.links{max-width:660px;margin:0 auto 48px;display:grid;gap:12px}.link-card{min-height:68px;padding:0 20px;display:flex;align-items:center;gap:15px;border:1px solid #233758;border-radius:13px;background:linear-gradient(110deg,#0b1427,#09101e);text-decoration:none;color:#e1efff;transition:transform .2s,border-color .2s,background .2s}.link-card:hover,.link-card:focus-visible{transform:translateY(-2px);border-color:#5a91d3;background:#101d34}.link-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#142442;color:#8dc0ff;font-size:17px}.link-icon svg{width:18px;height:18px;fill:currentColor}.link-copy{flex:1}.link-title{display:block;font:600 12px var(--mono);letter-spacing:.12em;text-transform:uppercase}.link-note{display:block;font-size:11px;color:#8295b5;margin-top:4px}.arrow{font-size:18px;color:#8dbfff}
     .footer{max-width:660px;margin:auto;border-top:1px solid #1b2b47;padding-top:18px;display:flex;justify-content:space-between;gap:12px;color:#647998;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.footer a{color:#91b7e4;text-decoration:none}.footer a:hover{color:#fff}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,14px);opacity:0;background:#142442;border:1px solid #35527b;border-radius:9px;padding:11px 15px;color:#e1efff;font:11px var(--mono);transition:.2s;pointer-events:none;z-index:5}.toast.show{opacity:1;transform:translate(-50%,0)}
     @keyframes pulse{50%{opacity:.45;box-shadow:0 0 3px #ff5473}}
-    @media(max-width:600px){.status{padding:0 14px;font-size:9px}.metrics{gap:9px}.metric:nth-child(n+3){display:none}.wrap{padding:54px 18px 32px}.portrait{width:126px;height:126px}.orbit{width:340px;height:340px;top:-82px}.socials{margin-bottom:36px}.link-card{padding:0 14px}.footer{font-size:9px}}
+    @media(max-width:600px){.status{padding:0 10px;font-size:8px;letter-spacing:.06em}.status-left,.metrics{gap:7px}.metric b{margin-left:2px}.wrap{padding:54px 18px 32px}.portrait{width:126px;height:126px}.orbit{width:340px;height:340px;top:-82px}.socials{margin-bottom:36px}.link-card{padding:0 14px}.footer{font-size:9px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
   </style>
 </head>
@@ -29,7 +29,7 @@
   <div class="noise" aria-hidden="true"></div>
   <header class="status" aria-label="Site status">
     <div class="status-left"><span class="live"><i class="dot"></i>LIVE</span></div>
-    <div class="metrics"><span class="metric">USERS <b id="userCount">384</b></span><span class="metric">SIGNAL <b>STRONG</b></span></div>
+    <div class="metrics"><span class="metric">USERS <b id="userCount">200</b></span><span class="metric">FPS <b id="fpsCount">--</b></span><span class="metric">PING <b id="pingCount">--</b></span></div>
   </header>
   <main class="wrap">
     <section class="hero" aria-labelledby="creator-name">
@@ -54,15 +54,51 @@
   <script>
     const userCount=document.getElementById('userCount');
     if(userCount){
+      let users=200;
       const updateUserCount=()=>{
-        const current=Number(userCount.textContent)||271;
-        const direction=Math.random()<0.5?-1:1;
-        const step=Math.random()<0.75?1:2;
-        let next=current+direction*step;
-        if(next<100||next>300)next=current-direction*step;
-        userCount.textContent=String(next);
+        const step=1+Math.floor(Math.random()*3);
+        const centerPull=users>230?-1:users<170?1:0;
+        const drift=centerPull||(Math.random()<.5?-1:1);
+        users=Math.max(100,Math.min(300,users+drift*step));
+        userCount.textContent=String(users);
       };
-      setInterval(updateUserCount,2000);
+      setInterval(updateUserCount,2600+Math.random()*1200);
+    }
+    // This is the browser's measured animation-frame rate, not a server benchmark.
+    const fpsCount=document.getElementById('fpsCount');
+    if(fpsCount){
+      let frames=0,lastReport=performance.now();
+      const measureFrames=now=>{
+        if(document.hidden){frames=0;lastReport=now;fpsCount.textContent='--';requestAnimationFrame(measureFrames);return;}
+        frames++;
+        const elapsed=now-lastReport;
+        if(elapsed>=1000){
+          fpsCount.textContent=String(Math.round(frames*1000/elapsed));
+          frames=0;lastReport=now;
+        }
+        requestAnimationFrame(measureFrames);
+      };
+      requestAnimationFrame(measureFrames);
+    }
+    // Browsers cannot send ICMP ping; this measures a real HTTP round trip to this site.
+    const pingCount=document.getElementById('pingCount');
+    if(pingCount){
+      const pingUrl=location.protocol==='file:'?'https://procvv.github.io/link-site/':location.origin+'/';
+      const measurePing=async()=>{
+        const controller=new AbortController();
+        const timeout=setTimeout(()=>controller.abort(),8000);
+        const started=performance.now();
+        try{
+          await fetch(pingUrl+(pingUrl.includes('?')?'&':'?')+'_ping='+Date.now(),{mode:'no-cors',cache:'no-store',signal:controller.signal});
+          pingCount.textContent=Math.round(performance.now()-started)+'MS';
+        }catch{
+          pingCount.textContent='--';
+        }finally{
+          clearTimeout(timeout);
+          setTimeout(measurePing,7000+Math.random()*3000);
+        }
+      };
+      measurePing();
     }
     document.getElementById('year').textContent=new Date().getFullYear();
     const toast=document.getElementById('toast'),copyLink=document.getElementById('copyLink');if(copyLink&&toast)copyLink.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(location.href);toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}catch{toast.textContent='Copy the page URL from your browser';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}});

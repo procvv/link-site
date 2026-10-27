@@ -33,38 +33,35 @@
     .live{color:var(--green)}.dot{background:var(--green);box-shadow:0 0 10px #ffffff;animation:pulse 1.7s infinite}
     .metric{color:#ffffff}.metric b{color:#f5f5f5}
     .wrap{max-width:1080px;padding:48px 28px 38px}
-    .hero{max-width:950px;min-height:420px;margin:0 auto;padding:36px 38px 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.75fr);align-items:center;gap:34px;text-align:left;border:1px solid #414141;border-radius:5px;background:linear-gradient(145deg,#111111,#050505 68%);box-shadow:0 0 0 1px #151515,0 0 42px #ffffff12;position:relative}
-    .orbit{width:420px;height:420px;top:50%;left:72%;transform:translate(-50%,-50%);border-color:#ffffff15}
-    .orbit:before,.orbit:after{border-color:#ffffff15}
+    .hero{max-width:950px;min-height:420px;margin:0 auto;padding:36px 38px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center;border:1px solid #414141;border-radius:5px;background:linear-gradient(145deg,#111111,#050505 68%);box-shadow:0 0 0 1px #151515,0 0 42px #ffffff12;position:relative}
     .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:200px;height:200px;margin:0;border-radius:50%;border:1px solid #8b8b8b;background:#080808;box-shadow:0 0 25px #ffffff18;overflow:hidden;isolation:isolate}
     .portrait:before,.portrait:after{content:none}
     .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.04) saturate(.9)}
-    .name{grid-column:1;grid-row:1;margin:12px 0 0;color:#ffffff;font-family:var(--mono);font-size:clamp(68px,10vw,116px);line-height:.9;font-weight:800;letter-spacing:-.09em;text-shadow:0 0 22px #ffffff33}
+    .name{margin:12px 0 0;color:#ffffff;font-family:var(--mono);font-size:clamp(68px,10vw,116px);line-height:.9;font-weight:800;letter-spacing:-.09em;text-shadow:0 0 22px #ffffff33}
     .verified{width:17px;height:17px;margin-left:7px;background:none;color:inherit;font-size:0;letter-spacing:0;vertical-align:top}
-    .tagline{grid-column:1;grid-row:2;margin:18px 0 0;color:#c7c7c7;font-size:11px;letter-spacing:.14em}
+    .tagline{margin:18px 0 0;color:#c7c7c7;font-size:11px;letter-spacing:.14em}
     .tagline:after{content:"_";color:#ffffff;animation:blink 1.1s steps(2,start) infinite}
-    .socials{grid-column:1;grid-row:3;justify-content:flex-start;gap:9px;margin:25px 0 0}
+    .socials{justify-content:center;gap:9px;margin:25px 0 0}
     .social{width:44px;height:44px;border:1px solid #414141;border-radius:3px;color:#ffffff;background:#0a0a0a;box-shadow:inset 0 0 12px #ffffff08}
     .social:hover,.social:focus-visible{border-color:#ffffff;color:#050505;background:#ffffff;transform:translateY(-2px);box-shadow:0 0 18px #ffffff55}
     .links{max-width:950px;margin:34px auto 40px;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .links:before{content:"$ ls ./connections";grid-column:1/-1;margin:0 0 3px;color:#b8b8b8;font:600 10px var(--mono);letter-spacing:.1em}
     .link-card{min-height:88px;padding:14px 16px;border:1px solid #343434;border-radius:3px;background:#0a0a0a;color:#f5f5f5;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
     .link-card:hover,.link-card:focus-visible{transform:translateY(-2px);border-color:#ffffff;background:#151515;box-shadow:0 0 18px #ffffff22}
     .link-icon{width:38px;height:38px;border:1px solid #737373;border-radius:2px;background:#101010;color:#ffffff}
     .link-title{font-size:11px;letter-spacing:.08em}
     .link-note{color:#a0a0a0;font-family:var(--mono);font-size:10px}
+    .link-help{grid-column:1/-1;max-width:550px;margin:4px auto 0;color:#a0a0a0;font:10px/1.7 var(--mono);text-align:center}
     .arrow{color:#ffffff;font-size:20px}
     .footer{max-width:950px;border-color:#343434;padding-top:14px;color:#929292;font-size:9px;letter-spacing:.12em}
     @keyframes blink{to{visibility:hidden}}
     @media(max-width:650px){
       .status{padding:0 11px;font-size:8px;letter-spacing:.07em}.status-left,.metrics{gap:7px}
       .wrap{padding:28px 15px 28px}
-      .hero{min-height:0;padding:24px 17px;grid-template-columns:1fr;gap:12px;text-align:center}
+      .hero{min-height:0;padding:24px 17px;gap:0;text-align:center}
       .portrait{grid-column:1;grid-row:1;width:min(48vw,170px);height:auto;aspect-ratio:1;border-radius:50%;margin:0 auto 7px}
-      .name{grid-column:1;grid-row:2;font-size:clamp(64px,20vw,96px);margin-top:4px}
-      .tagline{grid-column:1;grid-row:3;margin-top:6px;font-size:10px;letter-spacing:.09em}
-      .socials{grid-column:1;grid-row:4;justify-content:center;margin:16px 0 3px}
-      .orbit{width:320px;height:320px;top:205px;left:50%}
+      .name{font-size:clamp(64px,20vw,96px);margin-top:4px}
+      .tagline{margin-top:6px;font-size:10px;letter-spacing:.09em}
+      .socials{justify-content:center;margin:16px 0 3px}
       .links{grid-template-columns:1fr;margin:26px auto 30px;gap:10px}
       .links:before{grid-column:1}
       .link-card{min-height:78px;padding:11px 12px}
@@ -81,7 +78,6 @@
   </header>
   <main class="wrap">
     <section class="hero" aria-labelledby="creator-name">
-      <div class="orbit" aria-hidden="true"></div>
       <div class="portrait"><img src="profile.jpg" alt="BSKO profile photo" fetchpriority="high"></div>
       <h1 class="name" id="creator-name">BSKO<span class="verified" role="img" aria-label="Verified profile"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#ffffff"/><path d="m5.5 10.2 2.8 2.7 6.3-6.2" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h1>
       <p class="tagline">CLICK LINK TO GET PAID TODAY</p>
@@ -90,7 +86,12 @@
       </nav>
     </section>
     <section class="links" aria-label="Explore">
+<<<<<<< HEAD
       <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3-4.1Z"/></svg></span><span class="link-copy"><span class="link-title">Click Here To Learn How</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+=======
+      <p class="link-help"><strong>If the link says “Action can’t be completed,” hit the 3 dots at the top right corner and click “Open through browser.”</strong></p>
+      <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3 4.1Z"/></svg></span><span class="link-copy"><span class="link-title">LETS GET PAID TOGETHER</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+>>>>>>> bd961f523ca94543b2cca318d6c51582a3d64953
     </section>
     <footer class="footer" id="contact"><span>© <span id="year"></span> BSKO · ALL SIGNALS RESERVED</span></footer>
   </main>

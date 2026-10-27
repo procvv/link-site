@@ -34,8 +34,6 @@
     .metric{color:#ffffff}.metric b{color:#f5f5f5}
     .wrap{max-width:1080px;padding:48px 28px 38px}
     .hero{max-width:950px;min-height:420px;margin:0 auto;padding:36px 38px 30px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center;border:1px solid #414141;border-radius:5px;background:linear-gradient(145deg,#111111,#050505 68%);box-shadow:0 0 0 1px #151515,0 0 42px #ffffff12;position:relative}
-    .orbit{width:420px;height:420px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:#ffffff15}
-    .orbit:before,.orbit:after{border-color:#ffffff15}
     .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:200px;height:200px;margin:0;border-radius:50%;border:1px solid #8b8b8b;background:#080808;box-shadow:0 0 25px #ffffff18;overflow:hidden;isolation:isolate}
     .portrait:before,.portrait:after{content:none}
     .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.04) saturate(.9)}
@@ -65,7 +63,6 @@
       .name{font-size:clamp(64px,20vw,96px);margin-top:4px}
       .tagline{margin-top:6px;font-size:10px;letter-spacing:.09em}
       .socials{justify-content:center;margin:16px 0 3px}
-      .orbit{width:320px;height:320px;top:205px;left:50%}
       .links{grid-template-columns:1fr;margin:26px auto 30px;gap:10px}
       .links:before{grid-column:1}
       .link-card{min-height:78px;padding:11px 12px}
@@ -82,7 +79,6 @@
   </header>
   <main class="wrap">
     <section class="hero" aria-labelledby="creator-name">
-      <div class="orbit" aria-hidden="true"></div>
       <div class="portrait"><img src="profile.jpg" alt="BSKO profile photo" fetchpriority="high"></div>
       <h1 class="name" id="creator-name">BSKO<span class="verified" role="img" aria-label="Verified profile"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9" fill="#ffffff"/><path d="m5.5 10.2 2.8 2.7 6.3-6.2" fill="none" stroke="#050505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h1>
       <p class="tagline">CLICK LINK TO GET PAID TODAY</p>
@@ -91,8 +87,8 @@
       </nav>
     </section>
     <section class="links" aria-label="Explore">
-      <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3-4.1Z"/></svg></span><span class="link-copy"><span class="link-title">LETS GET PAID TOGETHER</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
-      <p class="link-help">If the link says “Action can’t be completed,” hit the 3 dots at the top right corner and click “Open through browser.”</p>
+      <p class="link-help"><strong>If the link says “Action can’t be completed,” hit the 3 dots at the top right corner and click “Open through browser.”</strong></p>
+      <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3 4.1Z"/></svg></span><span class="link-copy"><span class="link-title">LETS GET PAID TOGETHER</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
     </section>
     <footer class="footer" id="contact"><span>© <span id="year"></span> BSKO · ALL SIGNALS RESERVED</span></footer>
   </main>

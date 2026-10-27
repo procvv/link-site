@@ -44,15 +44,17 @@
     .socials{justify-content:center;gap:9px;margin:25px 0 0}
     .social{width:44px;height:44px;border:1px solid #414141;border-radius:3px;color:#ffffff;background:#0a0a0a;box-shadow:inset 0 0 12px #ffffff08}
     .social:hover,.social:focus-visible{border-color:#ffffff;color:#050505;background:#ffffff;transform:translateY(-2px);box-shadow:0 0 18px #ffffff55}
-    .links{max-width:950px;margin:34px auto 40px;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-    .link-card{min-height:88px;padding:14px 16px;border:1px solid #343434;border-radius:3px;background:#0a0a0a;color:#f5f5f5;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s}
-    .link-card:hover,.link-card:focus-visible{transform:translateY(-2px);border-color:#ffffff;background:#151515;box-shadow:0 0 18px #ffffff22}
-    .link-icon{width:38px;height:38px;border:1px solid #737373;border-radius:2px;background:#101010;color:#ffffff}
-    .link-title{font-size:11px;letter-spacing:.08em}
-    .link-note{color:#a0a0a0;font-family:var(--mono);font-size:10px}
-    .link-help{grid-column:1/-1;max-width:550px;margin:4px auto 0;color:#c0c0c0;font:700 14px/1.6 var(--mono);text-align:center}
-    @media(max-width:650px){.link-help{font-size:12px}}
-    .arrow{color:#ffffff;font-size:20px}
+    .links{max-width:560px;margin:34px auto 40px;grid-template-columns:minmax(0,1fr);gap:12px}
+    .links .link-card{width:100%;min-height:76px;padding:13px 18px;border:1px solid #3a3a3a;border-radius:3px;background:#0a0a0a;color:#f5f5f5;transition:transform .18s,border-color .18s,background .18s}
+    .links .link-card:hover{transform:translateY(-2px);border-color:#a8a8a8;background:#141414}
+    .links .link-card:focus-visible{outline:2px solid #e5e5e5;outline-offset:3px;border-color:#e5e5e5}
+    .links .link-icon{flex:0 0 38px;width:38px;height:38px;border:1px solid #656565;border-radius:2px;background:#101010;color:#ffffff}
+    .links .link-icon svg{width:18px;height:18px}
+    .links .link-copy{min-width:0;text-align:left}
+    .links .link-title{font-size:11px;letter-spacing:.08em}
+    .links .link-note{color:#a0a0a0;font-family:var(--mono);font-size:10px}
+    .links .link-help{grid-column:1/-1;max-width:100%;margin:2px auto 4px;color:#d0d0d0;font:700 13px/1.65 var(--mono);text-align:center}
+    .links .arrow{flex:0 0 18px;color:#ffffff;font-size:20px;text-align:right}
     .footer{max-width:950px;border-color:#343434;padding-top:14px;color:#929292;font-size:9px;letter-spacing:.12em}
     @keyframes blink{to{visibility:hidden}}
     @media(max-width:650px){
@@ -63,9 +65,9 @@
       .name{font-size:clamp(64px,20vw,96px);margin-top:4px}
       .tagline{margin-top:6px;font-size:10px;letter-spacing:.09em}
       .socials{justify-content:center;margin:16px 0 3px}
-      .links{grid-template-columns:1fr;margin:26px auto 30px;gap:10px}
-      .links:before{grid-column:1}
-      .link-card{min-height:78px;padding:11px 12px}
+      .links{grid-template-columns:minmax(0,1fr);margin:26px auto 30px;gap:10px}
+      .links .link-card{min-height:76px;padding:11px 12px}
+      .links .link-help{font-size:12px}
       .footer{font-size:8px;letter-spacing:.08em}
     }
     @media(prefers-reduced-motion:reduce){.tagline:after{animation:none}}
@@ -87,12 +89,9 @@
       </nav>
     </section>
     <section class="links" aria-label="Explore">
-<<<<<<< HEAD
-      <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3-4.1Z"/></svg></span><span class="link-copy"><span class="link-title">Click Here To Learn How</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
-=======
-      <p class="link-help"><strong>If the link says “Action can’t be completed,” hit the 3 dots at the top right corner and click “Open through browser.”</strong></p>
+      <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3-4.1Z"/></svg></span><span class="link-copy"><span class="link-title">CLICK HERE TO LEARN HOW</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
+      <p class="link-help"><strong>If the link says ‘Action can't be completed,’ hit the 3 dots at the top right corner and click ‘Open through browser.’</strong></p>
       <a class="link-card" href="https://t.me/addlist/F_BQx3QHvRwxODQx"><span class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 2.8 9.5c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.9c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 5 3.7c.9.5 1.6.2 1.8-.8l3.4-16C24.2 2.2 23.3 1.5 22 2Zm-12 10.7 9.6-6.1-7.9 7.5-.4 3.1-1.3 4.1Z"/></svg></span><span class="link-copy"><span class="link-title">LETS GET PAID TOGETHER</span><span class="link-note">Message me on Telegram</span></span><span class="arrow" aria-hidden="true">↗</span></a>
->>>>>>> bd961f523ca94543b2cca318d6c51582a3d64953
     </section>
     <footer class="footer" id="contact"><span>© <span id="year"></span> BSKO · ALL SIGNALS RESERVED</span></footer>
   </main>

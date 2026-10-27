@@ -36,7 +36,7 @@
     .hero{max-width:950px;min-height:420px;margin:0 auto;padding:36px 38px 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.75fr);align-items:center;gap:34px;text-align:left;border:1px solid #414141;border-radius:5px;background:linear-gradient(145deg,#111111,#050505 68%);box-shadow:0 0 0 1px #151515,0 0 42px #ffffff12;position:relative}
     .orbit{width:420px;height:420px;top:50%;left:72%;transform:translate(-50%,-50%);border-color:#ffffff15}
     .orbit:before,.orbit:after{border-color:#ffffff15}
-    .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:min(100%,255px);height:340px;margin:0;border-radius:3px;border:1px solid #8b8b8b;background:#080808;box-shadow:0 0 25px #ffffff18;isolation:isolate}
+    .portrait{grid-column:2;grid-row:1 / span 3;justify-self:center;width:200px;height:200px;margin:0;border-radius:50%;border:1px solid #8b8b8b;background:#080808;box-shadow:0 0 25px #ffffff18;overflow:hidden;isolation:isolate}
     .portrait:before,.portrait:after{content:none}
     .portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.04) saturate(.9)}
     .name{grid-column:1;grid-row:1;margin:12px 0 0;color:#ffffff;font-family:var(--mono);font-size:clamp(68px,10vw,116px);line-height:.9;font-weight:800;letter-spacing:-.09em;text-shadow:0 0 22px #ffffff33}
@@ -60,7 +60,7 @@
       .status{padding:0 11px;font-size:8px;letter-spacing:.07em}.status-left,.metrics{gap:7px}
       .wrap{padding:28px 15px 28px}
       .hero{min-height:0;padding:24px 17px;grid-template-columns:1fr;gap:12px;text-align:center}
-      .portrait{grid-column:1;grid-row:1;width:min(60vw,230px);height:auto;aspect-ratio:3/4;margin:0 auto 7px}
+      .portrait{grid-column:1;grid-row:1;width:min(48vw,170px);height:auto;aspect-ratio:1;border-radius:50%;margin:0 auto 7px}
       .name{grid-column:1;grid-row:2;font-size:clamp(64px,20vw,96px);margin-top:4px}
       .tagline{grid-column:1;grid-row:3;margin-top:6px;font-size:10px;letter-spacing:.09em}
       .socials{grid-column:1;grid-row:4;justify-content:center;margin:16px 0 3px}

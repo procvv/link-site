@@ -101,9 +101,9 @@
       let users=200;
       const updateUserCount=()=>{
         const step=1+Math.floor(Math.random()*3);
-        const centerPull=users>230?-1:users<170?1:0;
+        const centerPull=users>=248?-1:users<=202?1:0;
         const drift=centerPull||(Math.random()<.5?-1:1);
-        users=Math.max(100,Math.min(300,users+drift*step));
+        users=Math.max(200,Math.min(250,users+drift*step));
         userCount.textContent=String(users);
       };
       setInterval(updateUserCount,2600+Math.random()*1200);
